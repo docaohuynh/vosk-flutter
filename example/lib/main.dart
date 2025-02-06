@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:mic_stream/mic_stream.dart';
@@ -157,9 +156,7 @@ class _VoskFlutterDemoState extends State<VoskFlutterDemo> {
       try {
         await _recorder.start(samplingRate: 16000, encoder: AudioEncoder.wav, numChannels: 1);
       } catch (e) {
-        _error = e.toString() +
-            '\n\n Make sure fmedia(https://stsaz.github.io/fmedia/)'
-                ' is installed on Linux';
+        _error = '$e\n\n Make sure fmedia(https://stsaz.github.io/fmedia/) is installed on Linux';
       }
     }
   }
@@ -175,9 +172,7 @@ class _VoskFlutterDemoState extends State<VoskFlutterDemo> {
       //   debugPrint('File _fileRecognitionResult $_fileRecognitionResult');
       // }
     } catch (e) {
-      _error = e.toString() +
-          '\n\n Make sure fmedia(https://stsaz.github.io/fmedia/)'
-              ' is installed on Linux';
+      _error = '$e\n\n Make sure fmedia(https://stsaz.github.io/fmedia/) is installed on Linux';
     }
   }
 }
